@@ -1,5 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 # artificial-neural-network
 Self-implemented MLP, CNN, Dropout & BN and RNN based on NumPy.  
 Homework for Artificial Neural Network, Tsinghua University, 2018-Fall.
@@ -32,9 +30,9 @@ return np.matmul(grad_output, self.W.T)
 
 |Backpropagation|Random Synaptic Feedback|
 |---------------|------------------------|
-|97%|95%|
+|98%|95%|
 
-* An interesting relationship between ```init_std``` of ```W``` and ```B``` and [the gradient exploding problem](https://www.bioinf.jku.at/publications/older/2604.pdf)(check section 3.1) was found. As suggested by the author, it also might be related with $e^TWBe>0$.
+* An interesting relationship between ```init_std``` of ```W``` and ```B``` and [the gradient exploding problem](https://www.bioinf.jku.at/publications/older/2604.pdf)(check section 3.1) was found. As suggested by the author, it also might be related with <a href="https://www.codecogs.com/eqnedit.php?latex=e^TWBe>0" target="_blank"><img src="https://latex.codecogs.com/png.latex?e^TWBe>0" title="e^TWBe>0" /></a>.
 
 **HW2: Convolution Neural Network (CNN)**
 
