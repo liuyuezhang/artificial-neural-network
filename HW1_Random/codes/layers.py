@@ -59,6 +59,8 @@ class Linear(Layer):
         self.in_num = in_num
         self.out_num = out_num
         self.W = np.random.randn(in_num, out_num) * init_std
+        self.B = np.random.randn(in_num, out_num) * init_std
+        # self.B = np.ones([in_num, out_num]) * 0.01
         self.b = np.zeros(out_num)
 
         self.grad_W = np.zeros((in_num, out_num))
@@ -78,7 +80,8 @@ class Linear(Layer):
         input = self._saved_tensor
         self.grad_W = np.matmul(input.T, grad_output)
         self.grad_b = np.sum(grad_output, axis=0)
-        return np.matmul(grad_output, self.W.T)
+        # print(np.mean(np.mean(np.matmul(self.W, self.B.T))))
+        return np.matmul(grad_output, self.B.T)
 
     def update(self, config):
         mm = config['momentum']
